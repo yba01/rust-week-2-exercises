@@ -35,7 +35,7 @@ Your task is to complete the `TODO` items found in the source files located in t
 
 9. Confirm your forked repository has a green check mark.
 
-<img src="https://github.com/btrust-builders/rust-week-2-exercises/blob/main/success.png" width="500" />
+<img src="https://github.com/btrust-builders/rust-week-2-exercises/blob/main/success.png" width="300" />
 
 10. Submit your solution to this form: [Google form](https://forms.gle/a3ibaSHcqpaZWsnPA).
 
