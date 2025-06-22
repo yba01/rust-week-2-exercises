@@ -1,4 +1,4 @@
-use hex::{FromHex, decode, encode};
+use hex::{decode, encode};
 
 pub fn decode_hex(hex_str: &str) -> Result<Vec<u8>, String> {
     // TODO: Decode hex string into Vec<u8>, return error string on failure
@@ -65,9 +65,9 @@ pub fn move_txid(txid: String) -> String {
 
 // TODO: Add necessary derive traits
 pub enum Opcode {
-    OP_CHECKSIG,
-    OP_DUP,
-    OP_INVALID,
+    OpChecksig,
+    OpDup,
+    OpInvalid,
 }
 
 impl Opcode {

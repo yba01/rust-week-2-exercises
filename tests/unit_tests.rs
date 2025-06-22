@@ -81,8 +81,8 @@ fn test_move_txid() {
 
 #[test]
 fn test_opcode_parsing() {
-    assert_eq!(Opcode::from_byte(0xac), Ok(Opcode::OP_CHECKSIG));
-    assert_eq!(Opcode::from_byte(0x76), Ok(Opcode::OP_DUP));
+    assert_eq!(Opcode::from_byte(0xac), Ok(Opcode::OpChecksig));
+    assert_eq!(Opcode::from_byte(0x76), Ok(Opcode::OpDup));
     assert_eq!(
         Opcode::from_byte(0x00),
         Err("Invalid opcode: 0x00".to_string())
