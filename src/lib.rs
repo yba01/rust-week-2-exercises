@@ -7,7 +7,6 @@ pub fn decode_hex(hex_str: &str) -> Result<Vec<u8>, String> {
         return Err("Hex decode error".to_string());
     }
     Ok(trans.unwrap())
-    
 }
 
 pub fn to_big_endian(bytes: &[u8]) -> Vec<u8> {
@@ -33,7 +32,7 @@ pub fn swap_endian_u32(num: u32) -> [u8; 4] {
 
 pub fn parse_satoshis(input: &str) -> Result<u64, String> {
     // TODO: Parse input string to u64, return error string if invalid
-    let value:Result<u64, _> = input.parse(); 
+    let value: Result<u64, _> = input.parse();
     if value.is_err() {
         return Err("Invalid satoshi amount".to_string());
     }
@@ -51,7 +50,7 @@ pub fn classify_script(script: &[u8]) -> ScriptType {
     match script {
         [0x76, 0xa9, 0x14, ..] => ScriptType::P2PKH,
         [0x00, 0x14, ..] => ScriptType::P2WPKH,
-        _ => ScriptType::Unknown
+        _ => ScriptType::Unknown,
     }
 }
 
@@ -102,7 +101,7 @@ impl Opcode {
         match byte {
             0xac => Ok(Opcode::OpChecksig),
             0x76 => Ok(Opcode::OpDup),
-            _ => Err("Invalid opcode: 0x00".to_string())
+            _ => Err("Invalid opcode: 0x00".to_string()),
         }
     }
 }
@@ -117,5 +116,9 @@ pub struct UTXO {
 
 pub fn consume_utxo(utxo: UTXO) -> UTXO {
     // TODO: Implement UTXO consumption logic (if any)
-    UTXO { txid: utxo.txid, vout: utxo.vout, value: utxo.value }
+    UTXO {
+        txid: utxo.txid,
+        vout: utxo.vout,
+        value: utxo.value,
+    }
 }
